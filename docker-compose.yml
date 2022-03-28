@@ -4,7 +4,6 @@ services:
   mongodb:
     image: "mongo:5.0"
     volumes:
-#example      - "/mnt/disk7/graylog/mongodb_data:/data/db" 
       - "/your/unraid/path/here:/data/db"
     restart: "on-failure"
 
@@ -21,7 +20,6 @@ services:
         hard: -1
         soft: -1
     volumes:
- #example      - "/mnt/disk7/graylog/es_data:/usr/share/elasticsearch/data"
        - "/your/unraid/path/here:/usr/share/elasticsearch/data"
     restart: "on-failure"
 
@@ -58,8 +56,6 @@ services:
     - "13301:13301/tcp" # Forwarder data
     - "13302:13302/tcp" # Forwarder config
     volumes:
-#example      - "/mnt/disk7/graylog/graylog_data:/usr/share/graylog/data/data"
-#example      - "/mnt/disk7/graylog/graylog_journal:/usr/share/graylog/data/journal"
       - "/your/unraid/path/here:/usr/share/graylog/data/data"
       - "/your/unraid/path/here:/usr/share/graylog/data/journal"
     restart: "on-failure"
